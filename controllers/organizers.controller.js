@@ -47,7 +47,7 @@ const getAllOrganizers = async (req, res) => {
         res.status(200).json(organizers);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ error: 'Internal server error so can\'t get all organizers ' });
+        res.status(500).json({ error: 'Internal server error so can\'t get all organizers I do not know why this error only when hosting ' });
     }
 };
 
