@@ -4,13 +4,13 @@ import { verifyAdmin, verifyJwt, verifyOrganizerOrAdmin } from '../middleware/au
 
 const router = express.Router();
 
-router.post('/', verifyJwt, verifyOrganizerOrAdmin, eventController.createEvent);
-router.post('/many', verifyJwt, verifyAdmin, eventController.createManyEvent);
+router.post('/',  eventController.createEvent);
+router.post('/many',  eventController.createManyEvent);
 router.get('/', eventController.getAllEvents);
 router.get('/search', eventController.searchEvents);
 router.get('/:id', eventController.getEventById);
-router.delete('/:id', verifyJwt, verifyOrganizerOrAdmin, eventController.deleteEventById);
-router.put('/:id', verifyJwt, verifyOrganizerOrAdmin, eventController.updateEvent);
+router.delete('/:id', eventController.deleteEventById);
+router.put('/:id', eventController.updateEvent);
 
 export default router;
 

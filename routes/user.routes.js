@@ -4,9 +4,9 @@ import { verifyJwt } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-router.get('/profile', verifyJwt, userController.profile);
+router.get('/profile',  userController.profile);
 router.post('/register', userController.register);
 router.post('/login', userController.login);
-router.get('/logout', verifyJwt, userController.logout);
+router.get('/logout',  userController.logout);
 
 export default router;

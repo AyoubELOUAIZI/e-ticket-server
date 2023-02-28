@@ -15,7 +15,7 @@ import clientRoutes from './routes/client.routes.js';
 import adminRoutes from './routes/admin.routes.js';
 import accountRoutes from './routes/account.routes.js';
 import userRoutes from './routes/user.routes.js';
-import { verifyAdmin, verifyClientOrAdmin, verifyJwt, verifyOrganizerOrAdmin } from './middleware/authMiddleware.js';
+import { verifyAdmin,   verifyOrganizerOrAdmin } from './middleware/authMiddleware.js';
 import cookieParser from 'cookie-parser'
 import { handleError } from './middleware/errorHandlers.js';
 
@@ -49,18 +49,18 @@ app.use(cookieParser());
 
 
 app.use('/api/events', eventRoutes);
-app.use('/api/event-images', verifyJwt, verifyOrganizerOrAdmin, eventImagesRoutes);
-app.use('/api/event-reviews', verifyJwt, eventReviewRoutes);
-app.use('/api/notifications', verifyJwt, notificationsRoutes);
-app.use('/api/orders-cart', verifyJwt, ordersCartRoutes);
-app.use('/api/organizers', verifyJwt, verifyOrganizerOrAdmin, organizersRoutes);
-app.use('/api/paid-tickets-orders', verifyJwt, paidTicketsOrdersRoutes);
-app.use('/api/seat-categories', verifyJwt, seatCategoryRoutes);
-app.use('/api/tickets', verifyJwt,ticketRoutes);
-app.use('/api/client-wait-lists', verifyJwt, clientWaitListRoutes);
-app.use('/api/clients', verifyJwt,verifyClientOrAdmin, clientRoutes);
-app.use('/api/admins', verifyJwt,verifyAdmin, adminRoutes);
-app.use('/api/accounts', verifyJwt, accountRoutes);
+app.use('/api/event-images',  eventImagesRoutes);
+app.use('/api/event-reviews',  eventReviewRoutes);
+app.use('/api/notifications',  notificationsRoutes);
+app.use('/api/orders-cart',  ordersCartRoutes);
+app.use('/api/organizers',   organizersRoutes);
+app.use('/api/paid-tickets-orders',  paidTicketsOrdersRoutes);
+app.use('/api/seat-categories',  seatCategoryRoutes);
+app.use('/api/tickets', ticketRoutes);
+app.use('/api/client-wait-lists',  clientWaitListRoutes);
+app.use('/api/clients',  clientRoutes);
+app.use('/api/admins',  adminRoutes);
+app.use('/api/accounts',  accountRoutes);
 app.use('/api/user', userRoutes);
 
 
