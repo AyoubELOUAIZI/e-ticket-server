@@ -42,9 +42,9 @@ const deleteAccount = async (id) => {
 const getAllAccounts = async () => {
     return await prisma.account.findMany({
         include:{
-            Admin:true,
+            // Admin:true,
             Notifications:true,
-            Organizer:true,
+            // Organizer:true,
         }
     });
 };
