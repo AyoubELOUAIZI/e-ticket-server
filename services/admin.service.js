@@ -6,12 +6,16 @@ const createAdmin = async (data) => {
     return prisma.admin.create({data});
 };
 
+
 const getAdminById = async (id) => {
+   
     return await prisma.admin.findUnique({
         where: { ad_id: id },
+
         include: { Account: true }
     });
 };
+
 
 const getAllAdmins = async () => {
     return prisma.admin.findMany();
@@ -23,6 +27,7 @@ const deleteAdmin = async (id) => {
         where: { ad_id: id },
     });
 };
+
 
 
 const updateAdmin = async (id, updates) => {

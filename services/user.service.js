@@ -16,6 +16,7 @@ const createUser = async (account_id, account_type) => {
             user = await prisma.organizer.create({
                 data: {
                     account_id,
+
                 },
             });
             break;
@@ -23,6 +24,7 @@ const createUser = async (account_id, account_type) => {
             user = await prisma.client.create({
                 data: {
                     account_id,
+                    
                 },
             });
             break;

@@ -4,6 +4,7 @@ const prisma = new PrismaClient();
 const eventService = {
   getAllEvents: async () => {
     const events = await prisma.event.findMany({
+      
       include: {
         //ClientWaitList: true,
         Event_Images: true,

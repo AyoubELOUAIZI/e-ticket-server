@@ -6,6 +6,8 @@ const createEventImage = async (data) => {
     return prisma.event_Images.create({data, });
 };
 
+
+
 const getAllEventImages = async () => {
     return prisma.event_Images.findMany();
 };

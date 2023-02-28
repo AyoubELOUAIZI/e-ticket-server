@@ -2,9 +2,11 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+
 const createPaidTicketOrder = async (data) => {
     return prisma.paid_Tickets_Orders.create({ data, });
 };
+
 
 const getAllPaidTicketOrders = async () => {
     return prisma.paid_Tickets_Orders.findMany({

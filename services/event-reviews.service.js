@@ -5,8 +5,10 @@ const prisma = new PrismaClient();
 
 const createEventReview = async (data) => {
     try {
+        
         const newEventReview = await prisma.event_Review.create({
             data,
+
         });
         return newEventReview;
     } catch (err) {

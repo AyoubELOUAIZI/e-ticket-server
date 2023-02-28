@@ -1,10 +1,13 @@
 import { PrismaClient } from '@prisma/client';
 
+
 const prisma = new PrismaClient();
+
 
 const createClientWaitList = async (data) => {
     return prisma.clientWaitList.create({data});
 };
+
 
 const getClientWaitLists = async () => {
     return prisma.clientWaitList.findMany({

@@ -8,6 +8,7 @@ const createOrder = async (data) => {
 
 const getAllOrders = async () => {
     return prisma.orders_Cart.findMany({
+        
         include: {
              Event: true,
             Paid_Tickets_Orders: true,

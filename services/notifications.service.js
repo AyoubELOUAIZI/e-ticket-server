@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const createNotification = async (data) => {
+
     return  prisma.notifications.create({ data, });
 };
 
@@ -12,7 +13,9 @@ const getAllNotifications = async () => {
 
 
 
+
 const getNotificationsByAccountId = async (id) => {
+    
     return await prisma.notifications.findMany({
         where: { account_id: id },
     });

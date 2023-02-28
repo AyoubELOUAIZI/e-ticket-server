@@ -2,9 +2,11 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+
 const createSeatCategory = async (data) => {
     return prisma.seatCategory.create({data,});
 };
+
 
 const getAllSeatCategories = async () => {
     return prisma.seatCategory.findMany();

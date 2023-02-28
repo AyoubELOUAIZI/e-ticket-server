@@ -8,8 +8,10 @@ const createOrganizer = async (data) => {
 
 const getOrganizerById = async (org_id) => {
     return prisma.organizer.findUnique({
+
         where: { org_id },
         include: {
+
             // Account: true,
             Events: true,
         }
@@ -17,9 +19,11 @@ const getOrganizerById = async (org_id) => {
 };
 
 const getAllOrganizers = async () => {
+
     return prisma.organizer.findMany({
         include: {
             Events: true,
+
         }
     });
 };
@@ -27,6 +31,7 @@ const getAllOrganizers = async () => {
 
 const deleteOrganizerById = async (id) => {
     return await prisma.organizer.delete({
+
         where: { org_id: id },
     });
 };
@@ -37,6 +42,7 @@ const updateOrganizer = async (id, updates) => {
         data: updates
     });
 };
+
 
 export default {
     createOrganizer,

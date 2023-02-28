@@ -9,6 +9,7 @@ const createTicket = async (data) => {
 
 const getTicketsByClientId = async (clientId) => {
     const tickets = await prisma.ticket.findMany({
+
         where: { client_id: Number(clientId) },
         // include: { Event: true },
     });
@@ -19,6 +20,7 @@ const getTicketsByClientId = async (clientId) => {
 const getAllTickets = async () => {
     return prisma.ticket.findMany({
         include:{
+            
             Paid_Tickets_Orders:true,
         }
     });

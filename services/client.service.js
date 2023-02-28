@@ -6,6 +6,7 @@ const createClient = async (data) => {
     return prisma.client.create({data});
 };
 
+
 const getAllClients = async () => {
     return prisma.client.findMany({
         include:{
